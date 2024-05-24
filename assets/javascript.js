@@ -29,11 +29,42 @@ const estrazioneNumero = function () {
       colorazioneDiv[i].classList.add("numeroEstratto");
     }
   }
+  const colorazioneDivCartelle =
+    document.getElementsByClassName("elementiCartella");
+  for (let index = 0; index < 76; index++) {
+    if (numeroRandom === Number(colorazioneDivCartelle[index].innerText)) {
+      colorazioneDivCartelle[index].classList.add("numeroEstratto");
+    }
+    // console.log(colorazioneDivCartelle[index].innerText);
+  }
 };
+
+const selezionaNumeroCartelle = function (event) {
+  event.preventDefault();
+  const numberElement = document.getElementById("inputNumero").value;
+  const divCartelle = document.getElementById("Cartelle");
+  console.log(numberElement);
+  console.log(divCartelle);
+  for (let i = 0; i < numberElement; i++) {
+    const cartella = document.createElement("div");
+    cartella.classList.add("cartelle");
+    divCartelle.appendChild(cartella);
+    const RiferimentoCartella = document.getElementById("Cartelle");
+    for (let index = 0; index < 24; index++) {
+      const createDivNumber = document.createElement("div");
+      const number = Math.floor(Math.random() * 77 + 1);
+      createDivNumber.innerText = number;
+      createDivNumber.classList.add("elementiCartella");
+      RiferimentoCartella.appendChild(createDivNumber);
+    }
+  }
+};
+
 window.addEventListener("DOMContentLoaded", function () {
   creaTabellone();
   creaBottone();
-
+  const bottoneCartelle = this.document.getElementById("bottoneInvio");
+  bottoneCartelle.addEventListener("click", selezionaNumeroCartelle);
   const bottoneElement = this.document.querySelector("button");
   bottoneElement.addEventListener("click", estrazioneNumero);
 });
