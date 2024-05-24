@@ -1,0 +1,41 @@
+body {
+  text-align: center;
+  background-color: rgba(0, 255, 247, 0.265);
+  max-width: 2000px;
+  min-width: 500px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+h1 {
+  padding: 50px;
+  margin: auto;
+}
+
+.elementiTombola {
+  width: 20px;
+  height: 20px;
+  padding: 50px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid black;
+  font-weight: bolder;
+}
+
+.stileBottone {
+  color: rgb(208, 64, 64);
+  border-radius: 10px;
+  background-color: rgba(0, 255, 247, 0.265);
+}
+.stileBottone:hover {
+  background-color: rgb(94, 160, 165);
+}
+
+#Bottone {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.numeroEstratto {
+  background-color: blue;
+}
